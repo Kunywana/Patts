@@ -27,7 +27,7 @@
         android:layout_height="44dp"
         android:layout_marginBottom="150dp"
         android:ems="10"
-        android:hint="enter a mesage here"
+        android:hint="Enter your Name here"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sendButton"

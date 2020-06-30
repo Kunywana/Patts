@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,14 +11,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        BatteryManager bm = (BatteryManager) getSystemService(BATTERY_SERVICE);
+        int batLeveL = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+
+        Toast.makeText(this, ""+batLeveL+"%", Toast.LENGTH_SHORT).show();
 
     }
 

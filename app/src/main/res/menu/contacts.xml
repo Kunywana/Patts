@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/email"
+        android:title="Email Me"/>
+
+    <item
+
+        android:title="Call Me"
+        app:showAsAction="never"
+        android:id="@+id/call"/>
+    <item
+
+        android:title="Set Alarm"
+        android:icon="@drawable/ic_alarm_on_black_24dp"
+        app:showAsAction="always"
+        android:id="@+id/alarm"/>
+</menu>

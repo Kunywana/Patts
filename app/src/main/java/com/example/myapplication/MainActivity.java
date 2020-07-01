@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
+
+    public void alarm(View view) {
+        startActivity(new Intent(getApplicationContext(),Alarm.class));
+    }
 }
 
 

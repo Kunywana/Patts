@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +13,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".StudentProvider"></activity>
+        <activity android:name=".CreateOrEditActivity" />
+        <activity android:name=".Save_To_Space" />
         <activity android:name=".SetAlarm" />
         <activity android:name=".Alarm" />
         <activity android:name=".Splash">
@@ -28,9 +32,17 @@
         <activity android:name=".DisplayMessageActivity" />
         <activity android:name=".MainActivity" />
 
-        <receiver android:name=".AlarmReciever"
+        <receiver
+            android:name=".AlarmReciever"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
+
+        <service
+            android:name=".MusicService"
+            android:enabled="true" />
+        <provider
+            android:authorities="com.example.myapplication.StudentProvider"
+            android:name=".StudentsProvider"/>
     </application>
 
 </manifest>

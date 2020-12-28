@@ -13,4 +13,24 @@
         android:title="Read File"
         app:showAsAction="always"
         android:id="@+id/read"/>
+    <item
+        android:icon="@drawable/ic_baseline_cloud_download"
+        android:title="Call Dora"
+        app:showAsAction="never"
+        android:id="@+id/call"/>
+    <item
+        android:icon="@drawable/ic_baseline_cloud_download"
+        android:title="Save File to internal/galllery"
+        app:showAsAction="never"
+        android:id="@+id/save"/>
+    <item
+        android:icon="@drawable/ic_baseline_cloud_download"
+        android:title="SQLite"
+        app:showAsAction="never"
+        android:id="@+id/sql"/>
+    <item
+        android:icon="@drawable/ic_baseline_cloud_download"
+        android:title="SQLite with Content Provider"
+        app:showAsAction="never"
+        android:id="@+id/sc"/>
 </menu>

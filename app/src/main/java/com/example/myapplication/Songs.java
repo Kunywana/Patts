@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -16,9 +17,6 @@ public class Songs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(Songs.this,R.raw.givenchy);
-        mediaPlayer.start();
-
         ListView listView = findViewById(R.id.songs);
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Intentions - Justin Beiber");
@@ -30,5 +28,16 @@ public class Songs extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,arrayList);
         listView.setAdapter(arrayAdapter);
 
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopService(new Intent(this, MusicService.class));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        startService(new Intent(this, MusicService.class));
     }
 }

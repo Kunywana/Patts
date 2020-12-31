@@ -33,4 +33,9 @@
         android:title="SQLite with Content Provider"
         app:showAsAction="never"
         android:id="@+id/sc"/>
+
+    <item
+        android:title="See Me"
+        app:showAsAction="never"
+        android:id="@+id/map"/>
 </menu>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="newAppName" translatable="true">Songs to Play</string>
+    <string name="title_activity_google_map">Map</string>
 </resources>

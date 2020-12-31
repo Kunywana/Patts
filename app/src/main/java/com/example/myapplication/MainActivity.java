@@ -100,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.sc:
                 startActivity(new Intent(getApplicationContext(),StudentProvider.class));
                 break;
-
+            case R.id.map:
+                startActivity(new Intent(getApplicationContext(),GoogleMap.class));
+                break;
             case R.id.sql:
                 Intent intent = new Intent(MainActivity.this, CreateOrEditActivity.class);
                 intent.putExtra(KEY_EXTRA_CONTACT_ID, 0);

@@ -7,12 +7,14 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
+<!--    app permissions requested by the app on runtime -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+<!--   includes app global properties used by android system to understand the app behaviour   -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,10 +32,13 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
+        
+<!--      Google Map API key description    -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+<!--       activity names with basic properties   -->
         <activity
             android:name=".GoogleMap"
             android:label="@string/title_activity_google_map"></activity>
@@ -42,6 +47,8 @@
         <activity android:name=".Save_To_Space" />
         <activity android:name=".SetAlarm" />
         <activity android:name=".Alarm" />
+        
+<!--      initial activity launched by android system upon app startup    -->
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,15 +61,18 @@
         <activity android:name=".DisplayMessageActivity" />
         <activity android:name=".MainActivity" />
 
+<!--      broadcast receiver to get Alarm pending intent    -->
         <receiver
             android:name=".AlarmReciever"
             android:enabled="true"
             android:exported="true" />
 
+<!--      background service that starts, stops and unbinds music playing    -->
         <service
             android:name=".MusicService"
             android:enabled="true" />
 
+<!--       content provider to export data upon request   -->
         <provider
             android:name=".StudentsProvider"
             android:authorities="com.example.myapplication.StudentProvider" />
